@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Page.css';
 import './Challenges.css';
 
@@ -15,6 +16,8 @@ interface Evento {
 }
 
 const Challenges = () => {
+  const navigate = useNavigate();
+  
   // Datos de ejemplo - en producción vendrían de una API
   const [eventos] = useState<Evento[]>([
     {
@@ -212,7 +215,11 @@ const Challenges = () => {
         <div className="eventos-list">
           {filteredEventos.length > 0 ? (
             filteredEventos.map((evento) => (
-              <div key={evento.id} className="evento-card">
+              <div 
+                key={evento.id} 
+                className="evento-card"
+                onClick={() => navigate(`/challenges/${evento.id}`)}
+              >
                 <div className="evento-header">
                   <h3 className="evento-name">{evento.name}</h3>
                   <span className={`evento-type-badge ${evento.type}`}>

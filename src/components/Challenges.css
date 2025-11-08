@@ -128,6 +128,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  cursor: pointer;
 }
 
 .evento-card:active {
@@ -283,6 +284,11 @@
 
   .evento-card {
     padding: 1.75rem;
+  }
+
+  .evento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   }
 }
 
