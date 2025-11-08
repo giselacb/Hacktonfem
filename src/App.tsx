@@ -5,7 +5,6 @@ import { onAuthStateChanged } from 'firebase/auth';
 import Login from './components/Login';
 import Register from './components/Register';
 import Layout from './components/Layout';
-import Home from './components/Home';
 import Challenges from './components/Challenges';
 import EventoDetail from './components/EventoDetail';
 import Ranking from './components/Ranking';
@@ -49,7 +48,7 @@ function App() {
           path="/" 
           element={user ? <Layout /> : <Navigate to="/login" />}
         >
-          <Route index element={<Home />} />
+          <Route index element={<Navigate to="/challenges" replace />} />
           <Route path="challenges" element={<Challenges />} />
           <Route path="challenges/:id" element={<EventoDetail />} />
           <Route path="ranking" element={<Ranking />} />

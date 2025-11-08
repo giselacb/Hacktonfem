@@ -1,10 +1,19 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Page.css';
 import './Challenges.css';
 
 type EventType = 'profesional' | 'formación';
 type STEMBranch = 'Ciencia' | 'Tecnología' | 'Ingeniería' | 'Matemáticas' | '';
+
+interface CurrentEvent {
+  id: string;
+  name: string;
+  description: string;
+  branch: string;
+  type: string;
+  progress: number;
+  daysRemaining: number;
+}
 
 interface Evento {
   id: string;
@@ -17,6 +26,17 @@ interface Evento {
 
 const Challenges = () => {
   const navigate = useNavigate();
+  
+  // Evento actual destacado (del Home)
+  const [currentEvent] = useState<CurrentEvent | null>({
+    id: '1',
+    name: 'Spotify AI Challenge',
+    description: 'Playlist Generator con IA Emocional',
+    branch: 'Tecnología',
+    type: 'profesional',
+    progress: 65,
+    daysRemaining: 3,
+  });
   
   // Datos de ejemplo - en producción vendrían de una API
   const [eventos] = useState<Evento[]>([
@@ -123,13 +143,54 @@ const Challenges = () => {
   };
 
   return (
-    <div className="page-container">
-      <div className="page-header">
-        <h1 className="page-title">Retos</h1>
-        <p className="page-subtitle">Retos disponibles</p>
-      </div>
-      
-      <div className="page-content">
+    <div className="challenges-page">
+      {/* Hero section con evento actual */}
+      {currentEvent && (
+        <div className="current-event-hero">
+          <div className="page-header">
+            <h1 className="page-title">Reto Actual</h1>
+            <p className="page-subtitle">Tu reto en progreso</p>
+          </div>
+          
+          <div className="current-event-card" onClick={() => navigate(`/challenges/${currentEvent.id}`)}>
+            <div className="current-event-header">
+              <h3 className="current-event-title">EVENTO ACTUAL</h3>
+              <span className="current-event-badge">{currentEvent.branch}</span>
+            </div>
+            
+            <h4 className="current-event-name">{currentEvent.name}</h4>
+            <p className="current-event-description">{currentEvent.description}</p>
+            
+            <div className="current-event-progress">
+              <div className="progress-header">
+                <span className="progress-label">Progreso</span>
+                <span className="progress-percentage">{currentEvent.progress}%</span>
+              </div>
+              <div className="progress-bar">
+                <div 
+                  className="progress-fill" 
+                  style={{ width: `${currentEvent.progress}%` }}
+                ></div>
+              </div>
+            </div>
+
+            <div className="current-event-footer">
+              <span className="days-remaining">
+                ⏱️ {currentEvent.daysRemaining} {currentEvent.daysRemaining === 1 ? 'día restante' : 'días restantes'}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sección de todos los retos */}
+      <div className="all-challenges-section">
+        <div className="page-header">
+          <h1 className="page-title">Todos los Retos</h1>
+          <p className="page-subtitle">Explora y participa en retos</p>
+        </div>
+        
+        <div className="page-content">
         {/* Filtros y búsqueda */}
         <div className="filters-section">
           <div className="search-container">
@@ -244,6 +305,7 @@ const Challenges = () => {
               <p>No se encontraron eventos con los filtros seleccionados.</p>
             </div>
           )}
+        </div>
         </div>
       </div>
     </div>
