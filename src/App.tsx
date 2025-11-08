@@ -48,7 +48,7 @@ function App() {
           path="/" 
           element={user ? <Layout /> : <Navigate to="/login" />}
         >
-          <Route index element={<Navigate to="/challenges" replace />} />
+          <Route index element={<Challenges />} />
           <Route path="challenges" element={<Challenges />} />
           <Route path="challenges/:id" element={<EventoDetail />} />
           <Route path="ranking" element={<Ranking />} />
