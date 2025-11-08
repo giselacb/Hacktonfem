@@ -51,8 +51,8 @@ const Home = () => {
   return (
     <div className="page-container home-container">
       <div className="page-header">
-        <h1 className="page-title">Inicio</h1>
-        {user && <p className="page-subtitle">Bienvenido, {user.email}</p>}
+        <h1 className="page-title">Feminix</h1>
+        {user && <p className="page-subtitle">Hola, {user.email}</p>}
       </div>
       
       <div className="home-content">

@@ -101,8 +101,7 @@
 .form-group label {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7b0000;
-  margin-left: 0.25rem;
+  color: var(--text-secondary);
 }
 
 .form-group input {
@@ -133,9 +132,9 @@
 
 .auth-button {
   width: 100%;
-  padding: 1rem;
-  background: linear-gradient(135deg, #fb8500 0%, #bc3a00 100%);
-  color: white;
+  padding: 0.875rem 1rem;
+  background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+  color: var(--text-inverse);
   border: none;
   border-radius: 12px;
   font-size: 1rem;
@@ -167,8 +166,8 @@
 }
 
 .auth-button:hover:not(:disabled) {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(251, 133, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-400);
 }
 
 .auth-button:active:not(:disabled) {
