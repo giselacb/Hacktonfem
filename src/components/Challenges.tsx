@@ -125,8 +125,8 @@ const Challenges = () => {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1 className="page-title">Eventos</h1>
-        <p className="page-subtitle">Eventos disponibles</p>
+        <h1 className="page-title">Retos</h1>
+        <p className="page-subtitle">Retos disponibles</p>
       </div>
       
       <div className="page-content">

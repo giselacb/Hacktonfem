@@ -1,4 +1,4 @@
-# Hackaton YWT - React Mobile First con Firebase
+# Feminix - React Mobile First con Firebase
 
 Proyecto React con diseño mobile-first que incluye autenticación con Firebase (Login y Registro).
 

@@ -45,7 +45,7 @@
 
 .content-card p {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin: 0;
   line-height: 1.6;
 }
@@ -54,7 +54,7 @@
   width: 100%;
   margin-top: 1rem;
   padding: 0.875rem 1rem;
-  background: var(--error-dark);
+  background: var(--primary-700);
   color: var(--text-inverse);
   border: none;
   border-radius: 8px;
@@ -65,9 +65,9 @@
 }
 
 .logout-button:hover {
-  background: var(--secondary-700);
+  background: var(--primary-800);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--error-medium);
+  box-shadow: 0 4px 12px var(--primary-400);
 }
 
 .logout-button:active {
