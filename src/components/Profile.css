@@ -1,0 +1,355 @@
+/* Mobile First - Profile Page */
+
+.profile-page {
+  padding: 0;
+  background: var(--bg-secondary);
+}
+
+.profile-header {
+  text-align: left;
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.profile-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+}
+
+/* Foto de perfil y nombre */
+.profile-picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-picture-container {
+  position: relative;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-300);
+  background: var(--primary-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.profile-picture img,
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.profile-picture-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  background: var(--primary-200);
+  border-radius: 50%;
+}
+
+.profile-username {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.edit-profile-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--primary-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-profile-button:hover {
+  color: var(--primary-700);
+}
+
+.edit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Estadísticas */
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-900);
+  color: var(--bg-primary);
+}
+
+.stat-icon-svg {
+  width: 24px;
+  height: 24px;
+  color: var(--bg-primary);
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Insignias ganadas */
+.profile-badges {
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badges-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.badges-container {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-300) transparent;
+}
+
+.badges-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.badges-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.badges-container::-webkit-scrollbar-thumb {
+  background: var(--primary-300);
+  border-radius: 2px;
+}
+
+.badge-item {
+  flex-shrink: 0;
+}
+
+.badge-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.badge-circle.chemistry {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4), 0 0 40px rgba(255, 20, 147, 0.3);
+}
+
+.badge-circle.biology {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.4);
+}
+
+.badge-circle.physics {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.badge-circle.technology {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  color: #2d3748;
+}
+
+.badge-circle.mathematics {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  color: #2d3748;
+}
+
+.badge-circle.engineering {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  color: #2d3748;
+}
+
+.badge-circle.stem {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  color: #2d3748;
+}
+
+/* Opciones del perfil */
+.profile-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-primary);
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-option-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.profile-option-item:active {
+  background: var(--primary-100);
+  transform: scale(0.98);
+}
+
+.option-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary-700);
+}
+
+.option-icon-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.option-label {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.option-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .profile-content {
+    padding: 2rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-username {
+    font-size: 1.75rem;
+  }
+
+  .profile-stats {
+    padding: 2rem 1.5rem;
+  }
+
+  .stat-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--primary-900);
+  }
+
+  .stat-icon-svg {
+    width: 28px;
+    height: 28px;
+    color: var(--bg-primary);
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+  }
+
+  .profile-option-item:hover {
+    background: var(--primary-100);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .profile-content {
+    max-width: 700px;
+    padding: 2.5rem 2rem;
+  }
+}
+
