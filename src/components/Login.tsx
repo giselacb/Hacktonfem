@@ -31,13 +31,15 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1 className="auth-title">Iniciar Sesión</h1>
+        <div className="auth-logo">H</div>
+        <h1 className="auth-title">¡Bienvenido!</h1>
+        <p className="auth-subtitle">Inicia sesión para continuar</p>
         
         {error && <div className="error-message">{error}</div>}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Correo Electrónico</label>
             <input
               type="email"
               id="email"
@@ -57,7 +59,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              placeholder="••••••••"
+              placeholder="Ingresa tu contraseña"
               autoComplete="current-password"
             />
           </div>
@@ -72,7 +74,7 @@ const Login = () => {
         </form>
 
         <p className="auth-link">
-          ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
+          ¿No tienes cuenta? <Link to="/register">Regístrate aquí</Link>
         </p>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { translateFirebaseError } from '../utils/errorTranslations';
 import './Auth.css';
 
 const Register = () => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -16,6 +17,11 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    if (!name.trim()) {
+      setError('Por favor ingresa tu nombre');
+      return;
+    }
 
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden');
@@ -31,6 +37,8 @@ const Register = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      // Aquí podrías guardar el nombre en Firestore o actualizar el perfil
+      // Por ahora solo creamos la cuenta
       navigate('/');
     } catch (err: any) {
       const errorMessage = err.message || 'Error al crear la cuenta';
@@ -43,13 +51,28 @@ const Register = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1 className="auth-title">Crear Cuenta</h1>
+        <div className="auth-logo">H</div>
+        <h1 className="auth-title">Únete a Nosotros</h1>
+        <p className="auth-subtitle">Crea tu cuenta y comienza</p>
         
         {error && <div className="error-message">{error}</div>}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="name">Nombre</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="¿Cómo te llamas?"
+              autoComplete="given-name"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Correo Electrónico</label>
             <input
               type="email"
               id="email"
@@ -92,12 +115,12 @@ const Register = () => {
             className="auth-button"
             disabled={loading}
           >
-            {loading ? 'Creando cuenta...' : 'Registrarse'}
+            {loading ? 'Creando cuenta...' : 'Crear Cuenta'}
           </button>
         </form>
 
         <p className="auth-link">
-          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link>
+          ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
         </p>
       </div>
     </div>

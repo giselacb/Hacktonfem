@@ -1,0 +1,10 @@
+# Firebase Configuration
+# Copia este archivo a .env y reemplaza con tus credenciales reales de Firebase
+# IMPORTANTE: El archivo .env NO debe subirse a GitHub (ya esta en .gitignore)
+
+VITE_FIREBASE_API_KEY=AIzaSyBZGg_lWMT-6glq7TJ920rldSsW-GX3tDU
+VITE_FIREBASE_AUTH_DOMAIN=hackaton-ywt.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=hackaton-ywt
+VITE_FIREBASE_STORAGE_BUCKET=hackaton-ywt.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=743633818245
+VITE_FIREBASE_APP_ID=1:743633818245:web:72d84e7341dbb9aed08fec
