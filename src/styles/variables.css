@@ -1,0 +1,70 @@
+/* Design Tokens - Color Palette */
+
+:root {
+  /* Primary Colors */
+  --primary-100: #ebeef9;
+  --primary-200: #d8ddef;
+  --primary-300: #bcc7e0;
+  --primary-400: #97a8c8;
+  --primary-500: #718baf;
+  --primary-600: #4e6e93;
+  --primary-700: #365978;
+  --primary-800: #1e4159;
+  --primary-900: #023047;
+
+  /* Secondary Colors */
+  --secondary-100: #faecd9;
+  --secondary-200: #fdd7aa;
+  --secondary-300: #f7b97a;
+  --secondary-400: #e7903b;
+  --secondary-500: #fb8500;
+  --secondary-600: #bc3a00;
+  --secondary-700: #9e1e00;
+  --secondary-800: #7b0000;
+  --secondary-900: #560000;
+
+  /* Semantic Colors */
+  --color-primary: var(--primary-600);
+  --color-primary-hover: var(--primary-700);
+  --color-primary-light: var(--primary-100);
+  --color-primary-dark: var(--primary-900);
+
+  --color-secondary: var(--secondary-500);
+  --color-secondary-hover: var(--secondary-600);
+  --color-secondary-light: var(--secondary-100);
+  --color-secondary-dark: var(--secondary-900);
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f7fafc;
+  --color-gray-100: #edf2f7;
+  --color-gray-200: #e2e8f0;
+  --color-gray-300: #cbd5e0;
+  --color-gray-400: #a0aec0;
+  --color-gray-500: #718096;
+  --color-gray-600: #4a5568;
+  --color-gray-700: #2d3748;
+  --color-gray-800: #1a202c;
+  --color-gray-900: #171923;
+
+  /* Background Colors */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-50);
+  --bg-overlay: rgba(0, 0, 0, 0.1);
+
+  /* Text Colors */
+  --text-primary: var(--primary-900);
+  --text-secondary: var(--secondary-700);
+  --text-tertiary: var(--color-gray-500);
+  --text-inverse: var(--color-white);
+
+  /* Border Colors */
+  --border-light: var(--color-gray-200);
+  --border-medium: var(--color-gray-300);
+
+  /* Error Colors */
+  --error-light: #fed7d7;
+  --error-medium: #fc8181;
+  --error-dark: #c53030;
+}
+
