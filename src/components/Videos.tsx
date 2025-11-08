@@ -4,14 +4,14 @@ const Videos = () => {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1 className="page-title">Videos</h1>
+        <h1 className="page-title">Referentes</h1>
         <p className="page-subtitle">Contenido multimedia</p>
       </div>
       
       <div className="page-content">
         <div className="content-card">
-          <h2>Videos Disponibles</h2>
-          <p>Explora videos relacionados con el hackathon y los desafíos.</p>
+          <h2>Referentes Disponibles</h2>
+          <p>Explora referentes relacionados con el hackathon y los eventos.</p>
         </div>
       </div>
     </div>

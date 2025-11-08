@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useNavigate, Link } from 'react-router-dom';
+import { translateFirebaseError } from '../utils/errorTranslations';
 import './Auth.css';
 
 const Register = () => {
@@ -32,7 +33,8 @@ const Register = () => {
       await createUserWithEmailAndPassword(auth, email, password);
       navigate('/');
     } catch (err: any) {
-      setError(err.message || 'Error al crear la cuenta');
+      const errorMessage = err.message || 'Error al crear la cuenta';
+      setError(translateFirebaseError(errorMessage));
     } finally {
       setLoading(false);
     }

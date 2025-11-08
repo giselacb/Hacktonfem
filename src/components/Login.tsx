@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { useNavigate, Link } from 'react-router-dom';
+import { translateFirebaseError } from '../utils/errorTranslations';
 import './Auth.css';
 
 const Login = () => {
@@ -20,7 +21,8 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/');
     } catch (err: any) {
-      setError(err.message || 'Error al iniciar sesión');
+      const errorMessage = err.message || 'Error al iniciar sesión';
+      setError(translateFirebaseError(errorMessage));
     } finally {
       setLoading(false);
     }

@@ -38,7 +38,7 @@ const Profile = () => {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h1 className="page-title">Profile</h1>
+        <h1 className="page-title">Perfil</h1>
         <p className="page-subtitle">Tu perfil</p>
       </div>
       
