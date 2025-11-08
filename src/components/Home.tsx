@@ -86,13 +86,6 @@ const Home = () => {
             </div>
           </div>
         )}
-
-        <div className="home-main-content">
-          <div className="content-card">
-            <h2>¡Bienvenido a Hackaton YWT!</h2>
-            <p>Explora los eventos, revisa el ranking, consulta referentes y gestiona tu perfil.</p>
-          </div>
-        </div>
       </div>
     </div>
   );
