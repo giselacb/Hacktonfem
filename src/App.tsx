@@ -7,6 +7,7 @@ import Register from './components/Register';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Challenges from './components/Challenges';
+import EventoDetail from './components/EventoDetail';
 import Ranking from './components/Ranking';
 import Videos from './components/Videos';
 import Profile from './components/Profile';
@@ -50,6 +51,7 @@ function App() {
         >
           <Route index element={<Home />} />
           <Route path="challenges" element={<Challenges />} />
+          <Route path="challenges/:id" element={<EventoDetail />} />
           <Route path="ranking" element={<Ranking />} />
           <Route path="videos" element={<Videos />} />
           <Route path="profile" element={<Profile />} />
