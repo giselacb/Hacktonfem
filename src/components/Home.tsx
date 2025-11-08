@@ -1,55 +1,41 @@
 import { useEffect, useState } from 'react';
 import { auth } from '../firebase/config';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import { onAuthStateChanged } from 'firebase/auth';
+import './Page.css';
 
 const Home = () => {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      if (!currentUser) {
-        navigate('/login');
-      }
     });
 
     return () => unsubscribe();
-  }, [navigate]);
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate('/login');
-    } catch (error) {
-      console.error('Error al cerrar sesión:', error);
-    }
-  };
+  }, []);
 
   if (loading) {
     return (
-      <div className="home-container">
+      <div className="page-container">
         <div className="loading">Cargando...</div>
       </div>
     );
   }
 
   return (
-    <div className="home-container">
-      <div className="home-card">
-        <h1 className="home-title">¡Bienvenido!</h1>
-        {user && (
-          <>
-            <p className="home-email">{user.email}</p>
-            <button onClick={handleLogout} className="logout-button">
-              Cerrar Sesión
-            </button>
-          </>
-        )}
+    <div className="page-container">
+      <div className="page-header">
+        <h1 className="page-title">Home</h1>
+        {user && <p className="page-subtitle">Bienvenido, {user.email}</p>}
+      </div>
+      
+      <div className="page-content">
+        <div className="content-card">
+          <h2>¡Bienvenido a Hackaton YWT!</h2>
+          <p>Explora los desafíos, revisa el ranking, mira videos y gestiona tu perfil.</p>
+        </div>
       </div>
     </div>
   );

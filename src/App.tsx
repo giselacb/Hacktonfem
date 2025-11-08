@@ -4,7 +4,12 @@ import { auth } from './firebase/config';
 import { onAuthStateChanged } from 'firebase/auth';
 import Login from './components/Login';
 import Register from './components/Register';
+import Layout from './components/Layout';
 import Home from './components/Home';
+import Challenges from './components/Challenges';
+import Ranking from './components/Ranking';
+import Videos from './components/Videos';
+import Profile from './components/Profile';
 import './App.css';
 
 function App() {
@@ -41,8 +46,14 @@ function App() {
         />
         <Route 
           path="/" 
-          element={user ? <Home /> : <Navigate to="/login" />} 
-        />
+          element={user ? <Layout /> : <Navigate to="/login" />}
+        >
+          <Route index element={<Home />} />
+          <Route path="challenges" element={<Challenges />} />
+          <Route path="ranking" element={<Ranking />} />
+          <Route path="videos" element={<Videos />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
       </Routes>
     </Router>
   );

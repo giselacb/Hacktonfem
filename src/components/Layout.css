@@ -1,0 +1,30 @@
+/* Mobile First - Layout */
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f7fafc;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 70px; /* Espacio para la bottom navigation */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .main-content {
+    padding-bottom: 80px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .main-content {
+    padding-bottom: 0;
+  }
+}
+
