@@ -11,7 +11,7 @@ const Ranking = () => {
       <div className="page-content">
         <div className="content-card">
           <h2>Top Participantes</h2>
-          <p>Consulta el ranking de los mejores participantes del hackathon.</p>
+          <p>Consulta el ranking de los mejores participantes de Feminix.</p>
         </div>
       </div>
     </div>

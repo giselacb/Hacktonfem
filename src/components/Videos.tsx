@@ -11,7 +11,7 @@ const Videos = () => {
       <div className="page-content">
         <div className="content-card">
           <h2>Referentes Disponibles</h2>
-          <p>Explora referentes relacionados con el hackathon y los eventos.</p>
+          <p>Explora referentes relacionados con el hackathon y los retos.</p>
         </div>
       </div>
     </div>
